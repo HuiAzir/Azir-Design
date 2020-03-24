@@ -47,12 +47,12 @@
   border-width: $btn-border-width;
   border-style: solid;
   @include button-style(
-    $white,
-    lighten($btn-border-color, 30%),
-    lighten($body-color, 30%),
-    $white,
+    transparent,
+    $text-color,
+    $text-color,
+    transparent,
     $btn-border-color,
-    $body-color
+    $btn-color-default
   );
 }
 .azir-btn-primary {
@@ -74,7 +74,7 @@
     $link-color,
     transparent,
     transparent,
-    $link-hover-color
+    lighten($link-color, 10%)
   );
   &:hover {
     text-decoration: $link-decoration;
