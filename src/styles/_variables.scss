@@ -1,32 +1,34 @@
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-200: #f5f5f5 !default;
+$gray-300: #f0f0f0 !default;
+$gray-400: #d9d9d9 !default;
+$gray-500: #bfbfbf !default;
+$gray-600: #8c8c8c !default;
+$gray-700: #595959 !default;
+$gray-800: #434343 !default;
+$gray-900: #262626 !default;
+$gray-1000: #1f1f1f !default;
+$gray-1100: #141414 !default;
 $black: #000 !default;
 
 $blue: #0d6efd !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #d63384 !default;
-$red: #dc3545 !default;
+$red: #d83444 !default;
 $orange: #fd7e14 !default;
 $yellow: #fadb14 !default;
 $green: #52c41a !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 
-$primary: $gray-800 !default;
+$primary: $primary-color !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;
-$warning: $yellow !default;
-$danger: $red !default;
+$warning: $warning-color !default;
+$danger: $error-color !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
 
@@ -49,7 +51,7 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
 $font-family-base: $font-family-sans-serif !default;
 
 // 字体大小
-$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+// $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg: $font-size-base * 1.25 !default;
 $font-size-sm: $font-size-base * 0.875 !default;
 $font-size-root: null !default;
@@ -76,14 +78,15 @@ $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 
 // 链接
-$link-color: $primary !default;
+$link-color: map-get($theme-colors, $theme) !default;
 $link-decoration: none !default;
-$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-color: darken($link-color, 50%) !default;
 $link-hover-decoration: underline !default;
 
 // body
 $body-bg: $white !default;
 $body-color: $gray-900 !default;
+$body-color-dark: $white !default;
 $body-text-align: null !default;
 
 // Spacing
@@ -166,7 +169,7 @@ $enable-pointer-cursor-for-buttons: true !default;
 // 边框 和 border radius
 
 $border-width: 1px !default;
-$border-color: $gray-300 !default;
+$border-color: $gray-900 !default;
 
 $border-radius: 0.25rem !default;
 $border-radius-lg: 0.3rem !default;
@@ -177,3 +180,48 @@ $box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
 $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
 $box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
 $box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
+
+// 按钮
+// 按钮基本属性
+$btn-font-weight: 400;
+$btn-padding-y: 0.375rem !default;
+$btn-padding-x: 0.75rem !default;
+$btn-font-family: $font-family-base !default;
+$btn-font-size: $font-size-base !default;
+$btn-line-height: $line-height-base !default;
+
+// 按钮Light Dark Danger
+$btn-background-dark: map-get($theme-colors, $theme) !default;
+$btn-background-danger: $danger !default;
+$btn-background: $gray-100 !default;
+
+$btn-color: $body-color !default;
+$btn-color-dark: $body-color-dark !default;
+$btn-color-default: map-get($theme-colors, $theme) !default;
+//不同大小按钮的 padding 和 font size
+$btn-padding-y-sm: 0.25rem !default;
+$btn-padding-x-sm: 0.5rem !default;
+$btn-font-size-sm: $font-size-sm !default;
+
+$btn-padding-y-lg: 0.5rem !default;
+$btn-padding-x-lg: 1rem !default;
+$btn-font-size-lg: $font-size-lg !default;
+
+// 按钮边框
+$btn-border-width: $border-width !default;
+$btn-border-color: map-get($theme-colors, $theme) !default;
+// 按钮其他
+$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+
+// 禁用按钮
+$btn-disabled-opacity: 0.65 !default;
+$btn-border-color-disabled: $disabled-color !default;
+$btn-color-disabled: $disabled-color !default;
+$btn-background-disabled: $gray-300 !default;
+// 链接按钮
+$btn-link-color: $link-color !default;
+$btn-link-hover-color: $link-hover-color !default;
+$btn-link-disabled-color: $gray-600 !default;
+
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;

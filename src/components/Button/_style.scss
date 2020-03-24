@@ -1,0 +1,92 @@
+.azir-btn {
+  margin: 0 10px;
+  position: relative;
+  display: inline-block;
+  color: $body-color-dark;
+  outline: none;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size);
+  &:focus {
+    outline: 0;
+  }
+  &:disabled,
+  &.disabled {
+    opacity: $btn-disabled-opacity;
+    color: $btn-color-disabled;
+    border-width: $btn-border-width;
+    border-style: solid;
+    @include button-style(
+      $btn-background-disabled,
+      $btn-border-color-disabled,
+      $btn-color-disabled,
+      $btn-background-disabled,
+      $btn-border-color-disabled,
+      $btn-color-disabled
+    );
+    cursor: not-allowed;
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+.azir-btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg);
+}
+.azir-btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm);
+}
+
+.azir-btn-default {
+  border-width: $btn-border-width;
+  border-style: solid;
+  @include button-style(
+    transparent,
+    $text-color,
+    $text-color,
+    transparent,
+    $btn-border-color,
+    $btn-color-default
+  );
+}
+.azir-btn-primary {
+  border-width: 0;
+  @include button-style($btn-background-dark, transparent, $body-color-dark);
+}
+.azir-btn-danger {
+  border-width: 0;
+  @include button-style($btn-background-danger, transparent, $body-color-dark);
+}
+
+.azir-btn-link {
+  border-width: 0;
+  text-decoration: $link-decoration;
+  @include button-size(0, 0, $btn-font-size);
+  @include button-style(
+    transparent,
+    transparent,
+    $link-color,
+    transparent,
+    transparent,
+    lighten($link-color, 10%)
+  );
+  &:hover {
+    text-decoration: $link-decoration;
+  }
+  &.disabled {
+    opacity: $btn-disabled-opacity;
+    color: $btn-color-disabled;
+    border-width: 0;
+    @include button-style(transparent, transparent, $btn-color-disabled);
+    cursor: not-allowed;
+    > * {
+      pointer-events: none;
+    }
+  }
+}
