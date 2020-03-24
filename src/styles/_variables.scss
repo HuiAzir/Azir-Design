@@ -1,20 +1,22 @@
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-200: #f5f5f5 !default;
+$gray-300: #f0f0f0 !default;
+$gray-400: #d9d9d9 !default;
+$gray-500: #bfbfbf !default;
+$gray-600: #8c8c8c !default;
+$gray-700: #595959 !default;
+$gray-800: #434343 !default;
+$gray-900: #262626 !default;
+$gray-1000: #1f1f1f !default;
+$gray-1100: #141414 !default;
 $black: #000 !default;
 
 $blue: #0d6efd !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #d63384 !default;
-$red: #dc3545 !default;
+$red: #bb2b3a !default;
 $orange: #fd7e14 !default;
 $yellow: #fadb14 !default;
 $green: #52c41a !default;
@@ -78,12 +80,13 @@ $h6-font-size: $font-size-base !default;
 // 链接
 $link-color: $primary !default;
 $link-decoration: none !default;
-$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-color: darken($link-color, 50%) !default;
 $link-hover-decoration: underline !default;
 
 // body
 $body-bg: $white !default;
 $body-color: $gray-900 !default;
+$body-color-dark: $white !default;
 $body-text-align: null !default;
 
 // Spacing
@@ -166,7 +169,7 @@ $enable-pointer-cursor-for-buttons: true !default;
 // 边框 和 border radius
 
 $border-width: 1px !default;
-$border-color: $gray-300 !default;
+$border-color: $gray-900 !default;
 
 $border-radius: 0.25rem !default;
 $border-radius-lg: 0.3rem !default;
@@ -177,3 +180,48 @@ $box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
 $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
 $box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
 $box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
+
+// 按钮
+// 按钮基本属性
+$btn-font-weight: 400;
+$btn-padding-y: 0.375rem !default;
+$btn-padding-x: 0.75rem !default;
+$btn-font-family: $font-family-base !default;
+$btn-font-size: $font-size-base !default;
+$btn-line-height: $line-height-base !default;
+
+// 按钮Light Dark Danger
+$btn-background-dark: $primary !default;
+$btn-background-danger: $danger !default;
+$btn-background: $gray-100 !default;
+
+$btn-color: $body-color !default;
+$btn-color-dark: $body-color-dark !default;
+
+//不同大小按钮的 padding 和 font size
+$btn-padding-y-sm: 0.25rem !default;
+$btn-padding-x-sm: 0.5rem !default;
+$btn-font-size-sm: $font-size-sm !default;
+
+$btn-padding-y-lg: 0.5rem !default;
+$btn-padding-x-lg: 1rem !default;
+$btn-font-size-lg: $font-size-lg !default;
+
+// 按钮边框
+$btn-border-width: $border-width !default;
+$btn-border-color: $primary !default;
+// 按钮其他
+$btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+
+// 禁用按钮
+$btn-disabled-opacity: 0.65 !default;
+$btn-border-color-disabled: $gray-400 !default;
+$btn-color-disabled: $gray-800 !default;
+$btn-background-disabled: $gray-300 !default;
+// 链接按钮
+$btn-link-color: $link-color !default;
+$btn-link-hover-color: $link-hover-color !default;
+$btn-link-disabled-color: $gray-600 !default;
+
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
