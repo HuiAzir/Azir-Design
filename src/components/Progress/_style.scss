@@ -1,0 +1,29 @@
+.azir-progress {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: $font-size-base;
+  color: $text-color;
+}
+.azir-progress-line {
+  width: 100%;
+  .azir-progress-outer {
+    display: inline-block;
+    width: 100%;
+    margin-right: calc(-3em - 10px);
+    padding-right: calc(3em + 10px);
+    .azir-progress-inner {
+      width: 100%;
+      background-color: $progress-background-color;
+      .azir-progress-bg {
+        transition: $progress-transition;
+        background-color: $progress-completed-background-color;
+      }
+    }
+  }
+  .title {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
