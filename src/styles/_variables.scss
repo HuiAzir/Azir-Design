@@ -225,3 +225,14 @@ $btn-link-disabled-color: $gray-600 !default;
 
 $btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+
+// Progress
+// 进度条边框
+$progress-border-radius: 100px !default;
+
+// 进度条背景色
+$progress-background-color: $gray-200;
+$progress-completed-background-color: map-get($theme-colors, $theme);
+
+// 进度条过渡
+$progress-transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;

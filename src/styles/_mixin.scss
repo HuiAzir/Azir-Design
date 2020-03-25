@@ -1,4 +1,4 @@
-// Button mixin
+//  Button mixin
 @mixin button-size($padding-y, $padding-x, $font-size) {
   padding: $padding-y $padding-x;
   font-size: $font-size;
@@ -27,3 +27,5 @@
     border-color: $hover-border;
   }
 }
+
+//  Progress mixin
