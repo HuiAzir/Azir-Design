@@ -8,6 +8,9 @@
 }
 .azir-progress-line {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   .azir-progress-outer {
     display: inline-block;
     width: 100%;
@@ -16,6 +19,7 @@
     .azir-progress-inner {
       width: 100%;
       background-color: $progress-background-color;
+      overflow: hidden;
       .azir-progress-bg {
         transition: $progress-transition;
         background-color: $progress-completed-background-color;
