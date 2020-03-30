@@ -25,7 +25,7 @@ export default () => {
 
   useInterval(
     () => {
-      setPercent((percent) =>
+      setPercent(percent =>
         percent + 9 > 100 ? 100 : percent + Math.floor(Math.random() * 10)
       );
       if (percent >= 100) {
