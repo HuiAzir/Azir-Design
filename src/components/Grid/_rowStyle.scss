@@ -1,0 +1,29 @@
+.azir-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.azir-row-top {
+  align-items: flex-start;
+}
+.azir-row-middle {
+  align-items: center;
+}
+.azir-row-bottom {
+  align-items: flex-end;
+}
+.azir-row-start {
+  justify-content: flex-start;
+}
+.azir-row-end {
+  justify-content: flex-end;
+}
+.azir-row-center {
+  justify-content: center;
+}
+.azir-row-space-around {
+  justify-content: space-around;
+}
+.azir-row-space-between {
+  justify-content: space-between;
+}

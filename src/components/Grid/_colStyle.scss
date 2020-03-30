@@ -1,0 +1,38 @@
+.azir-col {
+  position: relative;
+  max-width: 100%;
+}
+.azir-col-0 {
+  display: none;
+}
+// span
+@for $i from 1 through 24 {
+  $max: 24;
+  .azir-col-#{$i} {
+    display: block;
+    -webkit-box-flex: 0;
+    flex: 0 0 percentage($i/$max);
+    max-width: percentage($i/$max);
+  }
+}
+
+@for $i from 0 through 24 {
+  $max: 24;
+  .azir-col-offset-#{$i} {
+    margin-left: percentage($i/$max);
+  }
+}
+
+@for $i from 0 through 24 {
+  $max: 24;
+  .azir-col-push-#{$i} {
+    margin-left: percentage($i/$max);
+  }
+}
+
+@for $i from 0 through 24 {
+  $max: 24;
+  .azir-col-pull-#{$i} {
+    margin-right: percentage($i/$max);
+  }
+}
