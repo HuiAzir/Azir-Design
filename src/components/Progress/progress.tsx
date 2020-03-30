@@ -9,15 +9,15 @@ export interface ProgressProps {
   height?: string;
   width?: string; //  进度条的长度
 }
-const Progress: React.FC<ProgressProps> = (props) => {
+const Progress: React.FC<ProgressProps> = props => {
   const { type, height, percent, width } = props;
   const progressOuter = useRef<HTMLDivElement>(null);
   const baseClasses = classNames("azir-progress", {
-    [`azir-progress-${type}`]: type,
+    [`azir-progress-${type}`]: type
   });
   const progressBgStyle: React.CSSProperties = {
     height,
-    width: percent + "%",
+    width: percent + "%"
   };
   const classes = classNames(baseClasses);
 
@@ -41,6 +41,6 @@ const Progress: React.FC<ProgressProps> = (props) => {
 Progress.defaultProps = {
   type: "line",
   percent: 0,
-  height: "8px",
+  height: "8px"
 };
 export default Progress;
