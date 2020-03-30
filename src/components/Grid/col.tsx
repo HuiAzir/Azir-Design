@@ -4,8 +4,7 @@ import React, {
   CSSProperties,
   useContext,
   useEffect,
-  useState,
-  forwardRef
+  useState
 } from "react";
 import ClassNames from "classnames";
 import { RowContext } from "./row";
