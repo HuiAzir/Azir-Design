@@ -20,7 +20,7 @@ type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>;
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
 
-const Button: FC<ButtonProps> = (props) => {
+const Button: FC<ButtonProps> = props => {
   const {
     className,
     size,
@@ -34,7 +34,7 @@ const Button: FC<ButtonProps> = (props) => {
   const classes = ClassNames("azir-btn", className, {
     [`azir-btn-${type}`]: type,
     [`azir-btn-${size}`]: size,
-    disabled: disabled && type === "link",
+    disabled: disabled && type === "link"
   });
   if (type === "link" && !href) {
     throw new Error(
@@ -62,6 +62,6 @@ const Button: FC<ButtonProps> = (props) => {
 };
 Button.defaultProps = {
   children: "Button",
-  type: "default",
+  type: "default"
 };
 export default Button;
