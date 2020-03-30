@@ -50,12 +50,15 @@ const Row: FC<RowProps> = props => {
   }, [gutter]);
   const renderChildren = () => {
     return React.Children.map(children, (child, index) => {
-      const childElement = child as FunctionComponentElement<ColProps>;
-      const { displayName } = childElement.type;
-      if (displayName === "Col") {
-        return child;
-      } else {
+      try {
+        const childElement = child as FunctionComponentElement<ColProps>;
+        const { displayName } = childElement?.type;
+        if (displayName === "Col") {
+          return child;
+        }
+      } catch (e) {
         console.error("Warning: Row has a child which is not a Col component");
+        console.error(e);
       }
     });
   };

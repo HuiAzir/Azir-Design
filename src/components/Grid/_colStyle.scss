@@ -5,34 +5,27 @@
 .azir-col-0 {
   display: none;
 }
-// span
-@for $i from 1 through 24 {
-  $max: 24;
-  .azir-col-#{$i} {
-    display: block;
-    -webkit-box-flex: 0;
-    flex: 0 0 percentage($i/$max);
-    max-width: percentage($i/$max);
-  }
+@include GridDefault();
+@media screen and (min-width: 0px) and (max-width: 576px) {
+  @include GridReactive(xs);
 }
 
-@for $i from 0 through 24 {
-  $max: 24;
-  .azir-col-offset-#{$i} {
-    margin-left: percentage($i/$max);
-  }
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  @include GridReactive(sm);
 }
 
-@for $i from 0 through 24 {
-  $max: 24;
-  .azir-col-push-#{$i} {
-    margin-left: percentage($i/$max);
-  }
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  @include GridReactive(md);
 }
 
-@for $i from 0 through 24 {
-  $max: 24;
-  .azir-col-pull-#{$i} {
-    margin-right: percentage($i/$max);
-  }
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  @include GridReactive(lg);
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  @include GridReactive(xl);
+}
+
+@media screen and (min-width: 1600px) {
+  @include GridReactive(xxl);
 }

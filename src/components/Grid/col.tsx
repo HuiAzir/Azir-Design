@@ -8,6 +8,18 @@ import React, {
 } from "react";
 import ClassNames from "classnames";
 import { RowContext } from "./row";
+
+interface ColCSSProps {
+  offset?: number;
+  order?: number;
+  pull?: number;
+  push?: number;
+  span?: number;
+}
+type map = {
+  [key: string]: any;
+};
+type mediaScreen = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
 export interface ColProps {
   className?: string;
   flex?: string | number;
@@ -18,19 +30,42 @@ export interface ColProps {
   span?: number;
   style?: CSSProperties;
   children?: ReactNode;
+  xs?: ColCSSProps;
+  sm?: ColCSSProps;
+  md?: ColCSSProps;
+  lg?: ColCSSProps;
+  xl?: ColCSSProps;
+  xxl?: ColCSSProps;
 }
 
 const Col: FC<ColProps> = props => {
-  const { className, style = {}, span, offset, children, pull, push } = props;
+  const {
+    className,
+    style = {},
+    span,
+    offset,
+    children,
+    pull,
+    push,
+    order,
+    xs,
+    sm,
+    md,
+    lg,
+    xl,
+    xxl
+  } = props;
   const [colStyle, setColStyle] = useState<CSSProperties>({ ...style });
+  const [classes, setClasses] = useState<string>(
+    ClassNames("azir-col", className, {
+      [`azir-col-span-${span}`]: span,
+      [`azir-col-offset-${offset}`]: offset,
+      [`azir-col-pull-${pull}`]: pull,
+      [`azir-col-push-${push}`]: push,
+      [`azir-col-order-${order}`]: order
+    })
+  );
   const { gutter } = useContext(RowContext);
-
-  const classes = ClassNames("azir-col", className, {
-    [`azir-col-${span}`]: span,
-    [`azir-col-offset-${offset}`]: offset,
-    [`azir-col-pull-${pull}`]: pull,
-    [`azir-col-push-${push}`]: push
-  });
 
   // 水平垂直间距
   useEffect(() => {
@@ -53,6 +88,22 @@ const Col: FC<ColProps> = props => {
       }
     }
   }, [gutter]);
+  // 响应式 xs,sm,md,lg,xl,xxl
+  useEffect(() => {
+    function sc(size: mediaScreen, value: map): Array<string> {
+      const t: Array<string> = [];
+      Object.keys(value).forEach(key => {
+        t.push(`azir-col-${size}-${key}-${value[key]}`);
+      });
+      return t;
+    }
+    xs && setClasses(classes => ClassNames(classes, sc("xs", xs)));
+    sm && setClasses(classes => ClassNames(classes, sc("sm", sm)));
+    md && setClasses(classes => ClassNames(classes, sc("md", md)));
+    lg && setClasses(classes => ClassNames(classes, sc("lg", lg)));
+    xl && setClasses(classes => ClassNames(classes, sc("xl", xl)));
+    xxl && setClasses(classes => ClassNames(classes, sc("xxl", xxl)));
+  }, [xs, sm, md, lg, xl, xxl]);
 
   return (
     <div className={classes} style={colStyle}>
@@ -62,7 +113,6 @@ const Col: FC<ColProps> = props => {
 };
 Col.defaultProps = {
   offset: 0,
-  order: 0,
   pull: 0,
   push: 0,
   span: 24
