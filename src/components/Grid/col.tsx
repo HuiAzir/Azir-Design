@@ -1,19 +1,27 @@
-import React, { FC, ReactNode, CSSProperties, useContext, useEffect, useState, forwardRef } from 'react';
-import ClassNames from 'classnames';
-import { RowContext } from './row';
+import React, {
+  FC,
+  ReactNode,
+  CSSProperties,
+  useContext,
+  useEffect,
+  useState,
+  forwardRef
+} from "react";
+import ClassNames from "classnames";
+import { RowContext } from "./row";
 export interface ColProps {
-  className?: string,
-  flex?: string | number,
-  offset?: number,
-  order?: number,
-  pull?: number,
-  push?: number,
-  span?: number,
-  style?: CSSProperties,
-  children?: ReactNode
+  className?: string;
+  flex?: string | number;
+  offset?: number;
+  order?: number;
+  pull?: number;
+  push?: number;
+  span?: number;
+  style?: CSSProperties;
+  children?: ReactNode;
 }
 
-const Col: FC<ColProps> = (props) => {
+const Col: FC<ColProps> = props => {
   const { className, style = {}, span, offset, children, pull, push } = props;
   const [colStyle, setColStyle] = useState<CSSProperties>({ ...style });
   const { gutter } = useContext(RowContext);
@@ -60,6 +68,6 @@ Col.defaultProps = {
   push: 0,
   span: 24
 };
-Col.displayName = 'Col';
+Col.displayName = "Col";
 
 export default Col;

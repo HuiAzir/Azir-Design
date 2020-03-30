@@ -1,20 +1,28 @@
-import React, { FC, CSSProperties, useEffect, useState, createContext, ReactNode, FunctionComponentElement } from "react";
+import React, {
+  FC,
+  CSSProperties,
+  useEffect,
+  useState,
+  createContext,
+  ReactNode,
+  FunctionComponentElement
+} from "react";
 import ClassNames from "classnames";
-import { ColProps } from './col';
+import { ColProps } from "./col";
 export type gutter = number | [number, number];
 export interface RowContext {
-  gutter: gutter,
+  gutter: gutter;
 }
 export interface RowProps {
-  className?: string,
-  align?: "top" | "middle" | "bottom",
-  justify?: "start" | "end" | "center" | "space-around" | "space-between",
-  gutter?: gutter,
-  style?: CSSProperties,
-  children?: ReactNode
+  className?: string;
+  align?: "top" | "middle" | "bottom";
+  justify?: "start" | "end" | "center" | "space-around" | "space-between";
+  gutter?: gutter;
+  style?: CSSProperties;
+  children?: ReactNode;
 }
 export const RowContext = createContext<RowContext>({ gutter: 0 });
-const Row: FC<RowProps> = (props) => {
+const Row: FC<RowProps> = props => {
   const { className, align, justify, gutter, children, style = {} } = props;
   const [rowStyle, setRowStyle] = useState<CSSProperties>(style);
   const classes = ClassNames("azir-row", className, {
@@ -44,7 +52,7 @@ const Row: FC<RowProps> = (props) => {
     return React.Children.map(children, (child, index) => {
       const childElement = child as FunctionComponentElement<ColProps>;
       const { displayName } = childElement.type;
-      if (displayName === 'Col') {
+      if (displayName === "Col") {
         return child;
       } else {
         console.error("Warning: Row has a child which is not a Col component");
@@ -54,9 +62,7 @@ const Row: FC<RowProps> = (props) => {
   return (
     <div className={classes} style={rowStyle}>
       <RowContext.Provider value={passedContext}>
-        {
-          renderChildren()
-        }
+        {renderChildren()}
       </RowContext.Provider>
     </div>
   );
