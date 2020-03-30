@@ -1,6 +1,7 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
   extends: [
+    "prettier",
     "prettier/@typescript-eslint",
     "prettier/react",
     "prettier/standard"
@@ -33,6 +34,7 @@ module.exports = {
         exports: "never",
         functions: "never"
       }
-    ]
+    ],
+    "max-len": ["error", { code: 80 }]
   }
 };
