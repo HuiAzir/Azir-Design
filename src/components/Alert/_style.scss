@@ -1,0 +1,24 @@
+.azir-alert {
+  padding: 10px;
+  .azir-alert-title {
+    display: block;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-normal;
+  }
+  .azir-alert-message {
+    color: $alert-message-color;
+    display: block;
+  }
+}
+.azir-alert-success {
+  @include AlertBGColorAndBorder($success);
+}
+.azir-alert-info {
+  @include AlertBGColorAndBorder($info);
+}
+.azir-alert-warning {
+  @include AlertBGColorAndBorder($warning);
+}
+.azir-alert-error {
+  @include AlertBGColorAndBorder($error);
+}

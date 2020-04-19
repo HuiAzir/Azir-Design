@@ -1,7 +1,9 @@
-import React from "react";
-import ButtonExample from "./components/Button/example";
-import ProgressExample from "./components/Progress/example";
-import GridExample from "./components/Grid/example";
+import React from 'react';
+import ButtonExample from './components/Button/example';
+import ProgressExample from './components/Progress/example';
+import GridExample from './components/Grid/example';
+import AlertExample from './components/Alert/example';
+
 function App() {
   return (
     <div className="App">
@@ -9,6 +11,7 @@ function App() {
       <ButtonExample />
       <ProgressExample />
       <GridExample />
+      <AlertExample />
     </div>
   );
 }
