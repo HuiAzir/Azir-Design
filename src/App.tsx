@@ -4,6 +4,7 @@ import ProgressExample from './components/Progress/example';
 import GridExample from './components/Grid/example';
 import AlertExample from './components/Alert/example';
 import IconExample from './components/Icon/example';
+import MenuExample from './components/Menu/example';
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
       <GridExample />
       <AlertExample />
       <IconExample />
+      <MenuExample />
     </div>
   );
 }
