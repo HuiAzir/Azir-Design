@@ -1,0 +1,49 @@
+.azir-menu {
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  box-shadow: $menu-box-shadow;
+  &-item {
+    padding: $menu-item-padding-y $menu-item-padding-x;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+    &-disable {
+      pointer-events: none;
+      color: $menu-item-disable-color;
+      cursor: default;
+    }
+    &-active,
+    &:hover {
+      color: $menu-item-active-color;
+    }
+  }
+}
+.azir-menu-horizontal {
+  flex-direction: row;
+  border-bottom: $menu-border-width solid $menu-border-color;
+  .azir-menu-item {
+    border-bottom: $menu-item-active-border-width solid transparent;
+    &-active,
+    &:hover {
+      border-bottom: $menu-item-active-border-width solid
+        $menu-item-active-color;
+    }
+  }
+}
+.azir-menu-vertical {
+  flex-direction: column;
+  border-left: $menu-border-width solid $menu-border-color;
+  border-right: $menu-border-width solid $menu-border-color;
+  .azir-menu-item {
+    border-left: $menu-item-active-border-width solid transparent;
+    &-active,
+    &:hover {
+      border-left: $menu-item-active-border-width solid $menu-item-active-color;
+    }
+  }
+}
