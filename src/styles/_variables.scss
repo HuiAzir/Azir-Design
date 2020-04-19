@@ -25,10 +25,11 @@ $cyan: #17a2b8 !default;
 
 $primary: $primary-color !default;
 $secondary: $gray-600 !default;
-$success: $green !default;
-$info: $cyan !default;
+$success: $success-color !default;
+$info: $info-color !default;
 $warning: $warning-color !default;
 $danger: $error-color !default;
+$error: $error-color !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
 
@@ -236,3 +237,6 @@ $progress-completed-background-color: map-get($theme-colors, $theme);
 
 // 进度条过渡
 $progress-transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
+
+// Alert
+$alert-message-color: $gray-800;
