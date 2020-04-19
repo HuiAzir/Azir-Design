@@ -1,12 +1,7 @@
-import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
-import ClassNames from "classnames";
+import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
+import ClassNames from 'classnames';
+import { Omit } from '../../utils';
 
-export type ButtonSize = "lg" | "sm";
-export type ButtonType = "primary" | "danger" | "link" | "default";
-export type ButtonHtmlType = "submit" | "reset" | "button";
-export type ButtonProps = Partial<
-  AnchorButtonProps & Omit<NativeButtonProps, "type">
->;
 interface BaseButtonProps {
   className?: string;
   size?: ButtonSize;
@@ -16,11 +11,19 @@ interface BaseButtonProps {
   htmlType?: ButtonHtmlType;
   children: React.ReactNode;
 }
-type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
+
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>;
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
 
-const Button: FC<ButtonProps> = (props) => {
+type ButtonSize = 'lg' | 'sm';
+type ButtonType = 'primary' | 'danger' | 'link' | 'default';
+type ButtonHtmlType = 'submit' | 'reset' | 'button';
+
+export type ButtonProps = Partial<
+  AnchorButtonProps & Omit<NativeButtonProps, 'type'>
+>;
+
+const Button: FC<ButtonProps> = props => {
   const {
     className,
     size,
@@ -31,17 +34,17 @@ const Button: FC<ButtonProps> = (props) => {
     htmlType,
     ...restProps
   } = props;
-  const classes = ClassNames("azir-btn", className, {
+  const classes = ClassNames('azir-btn', className, {
     [`azir-btn-${type}`]: type,
     [`azir-btn-${size}`]: size,
-    disabled: disabled && type === "link",
+    disabled: disabled && type === 'link'
   });
-  if (type === "link" && !href) {
+  if (type === 'link' && !href) {
     throw new Error(
-      "If you want to use a link, you must pass the href attribute"
+      'If you want to use a link, you must pass the href attribute'
     );
   }
-  if (type === "link" && href) {
+  if (type === 'link' && href) {
     return (
       <a className={classes} href={href} {...restProps}>
         {children}
@@ -61,7 +64,7 @@ const Button: FC<ButtonProps> = (props) => {
   }
 };
 Button.defaultProps = {
-  children: "Button",
-  type: "default",
+  children: 'Button',
+  type: 'default'
 };
 export default Button;

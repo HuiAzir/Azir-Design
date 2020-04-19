@@ -1,4 +1,4 @@
-// Button mixin
+//  Button mixin
 @mixin button-size($padding-y, $padding-x, $font-size) {
   padding: $padding-y $padding-x;
   font-size: $font-size;
@@ -26,4 +26,102 @@
     color: $hover-color;
     border-color: $hover-border;
   }
+}
+
+//  Progress mixin
+
+//  Grid mixin
+@mixin GridDefault {
+  // span
+  @for $i from 1 through 24 {
+    $max: 24;
+    .azir-col-span-#{$i} {
+      display: block;
+      -webkit-box-flex: 0;
+      flex: 0 0 percentage($i/$max);
+      max-width: percentage($i/$max);
+    }
+  }
+
+  // offset
+  @for $i from 0 through 24 {
+    $max: 24;
+    .azir-col-offset-#{$i} {
+      margin-left: percentage($i/$max);
+    }
+  }
+
+  // push
+  @for $i from 0 through 24 {
+    $max: 24;
+    .azir-col-push-#{$i} {
+      margin-left: percentage($i/$max);
+    }
+  }
+
+  // pull
+  @for $i from 0 through 24 {
+    $max: 24;
+    .azir-col-pull-#{$i} {
+      margin-right: percentage($i/$max);
+    }
+  }
+
+  // order
+  @for $i from 0 through 24 {
+    $max: 24;
+    .azir-col-order-#{$i} {
+      order: $i;
+    }
+  }
+}
+@mixin GridReactive($size) {
+  // span
+  @for $i from 1 through 24 {
+    $max: 24;
+    .azir-col-#{$size}-span-#{$i} {
+      display: block;
+      -webkit-box-flex: 0;
+      flex: 0 0 percentage($i/$max);
+      max-width: percentage($i/$max);
+    }
+  }
+
+  // offset
+  @for $i from 0 through 24 {
+    $max: 24;
+    .azir-col-#{$size}-offset-#{$i} {
+      margin-left: percentage($i/$max);
+    }
+  }
+
+  // push
+  @for $i from 0 through 24 {
+    $max: 24;
+    .azir-col-#{$size}-push-#{$i} {
+      margin-left: percentage($i/$max);
+    }
+  }
+
+  // pull
+  @for $i from 0 through 24 {
+    $max: 24;
+    .azir-col-#{$size}-pull-#{$i} {
+      margin-right: percentage($i/$max);
+    }
+  }
+
+  // order
+  @for $i from 0 through 24 {
+    $max: 24;
+    .azir-col-#{$size}-order-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+//  AlertMixin
+@mixin AlertBGColorAndBorder($color) {
+  border: 1px solid rgba($color, 0.5);
+  background: rgba($color, 0.2);
 }

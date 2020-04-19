@@ -4,23 +4,23 @@ import { render, fireEvent } from "@testing-library/react";
 import Button, { ButtonProps } from "./button";
 
 const defaultProps: ButtonProps = {
-  onClick: jest.fn(),
+  onClick: jest.fn()
 };
 const LinkProps: ButtonProps = {
   type: "link",
-  href: "#",
+  href: "#"
 };
 
 const disabledProps: ButtonProps = {
   disabled: true,
-  onClick: jest.fn(),
+  onClick: jest.fn()
 };
 
 const testProps: ButtonProps = {
   htmlType: "submit",
   type: "primary",
   size: "lg",
-  className: "testClass",
+  className: "testClass"
 };
 
 describe("Button组件测试", () => {

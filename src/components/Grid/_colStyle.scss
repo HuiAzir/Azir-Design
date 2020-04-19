@@ -1,0 +1,31 @@
+.azir-col {
+  position: relative;
+  max-width: 100%;
+}
+.azir-col-0 {
+  display: none;
+}
+@include GridDefault();
+@media screen and (min-width: 0px) and (max-width: 576px) {
+  @include GridReactive(xs);
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  @include GridReactive(sm);
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  @include GridReactive(md);
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  @include GridReactive(lg);
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  @include GridReactive(xl);
+}
+
+@media screen and (min-width: 1600px) {
+  @include GridReactive(xxl);
+}
