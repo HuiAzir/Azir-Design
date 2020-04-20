@@ -12,7 +12,7 @@ const Example = () => {
     <>
       <Menu defaultIndex={0} onSelect={index => console.log(index)}>
         {data.map((item, index) => (
-          <MenuItem key={index} index={index} disable={index === 1}>
+          <MenuItem key={index} index={index} disabled={index === 1}>
             {item}
           </MenuItem>
         ))}
@@ -24,7 +24,7 @@ const Example = () => {
         style={{ width: 200 }}
       >
         {data.map((item, index) => (
-          <MenuItem key={index} index={index} disable={index === 1}>
+          <MenuItem key={index} index={index} disabled={index === 1}>
             {item}
           </MenuItem>
         ))}
