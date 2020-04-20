@@ -12,9 +12,9 @@
     &:focus {
       text-decoration: none;
     }
-    &-disable {
+    &-disabled {
       pointer-events: none;
-      color: $menu-item-disable-color;
+      color: $menu-item-disabled-color;
       cursor: default;
     }
     &-active,
