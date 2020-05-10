@@ -2,10 +2,10 @@ import React, { CSSProperties, FC, useContext } from 'react';
 import classNames from 'classnames';
 import { MenuContext } from './menu';
 export interface MenuItemProps {
-  index?: number;
   className?: string;
   disabled?: boolean;
   style?: CSSProperties;
+  [propName: string]: any;
 }
 const MenuItem: FC<MenuItemProps> = props => {
   const { index, className, style, disabled, children } = props;
